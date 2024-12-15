@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App - Home</title>
+  <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="main-header">
+    <div class="container">
+      <h1>Quiz App</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/create">Create Quiz</a></li>
+          <li><a href="/browse-quizzes">Browse Quizzes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h2>Welcome to Quiz App!</h2>
+      <p>Challenge your knowledge or create your own quiz for others to play. Start now!</p>
+      <a href="/browse-quizzes" class="btn">Browse Quizzes</a>
+      <a href="/create" class="btn btn-secondary">Create a Quiz</a>
+    </div>
+  </section>
+
+  <!-- Main Sections -->
+  <section id="create-quiz" class="section">
+    <div class="container">
+      <h3>Create Your Own Quiz</h3>
+      <p>Have an idea for a fun quiz? Build it in just a few steps and share it with the community.</p>
+      <a href="/create" class="btn">Start Creating</a>
+    </div>
+  </section>
+
+  <section id="browse-quizzes" class="section">
+    <div class="container">
+      <h3>Browse Quizzes</h3>
+      <p>Explore quizzes from a wide range of topics, created by other users like you.</p>
+      <a href="/browse-quizzes" class="btn">See All Quizzes</a>
+    </div>
+  </section>
+
+  <section id="popular-quizzes" class="section">
+    <div class="container">
+      <h3>Popular Quizzes</h3>
+      <ul class="quiz-list">
+        {% for quiz in quizzes %}
+          <li><a href="/quiz/{{ quiz.id }}">{{ quiz.title }} - {{ quiz.questions|length }} Questions</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="main-footer">
+  </footer>
+</body>
+</html>

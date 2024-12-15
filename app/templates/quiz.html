@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ quiz.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_quiz.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Quiz App</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Create Quiz</a></li>
+                <li><a href="/browse-quizzes">Browse Quizzes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="quiz-header">
+            <h1>{{ quiz.title }}</h1>
+            <p>{{ quiz.description }}</p>
+        </section>
+
+        <section class="quiz-form">
+            <form method="POST" action="/submit-quiz/{{ quiz.id }}">
+                {% for question in questions %}
+                <fieldset>
+                    <legend>{{ question.question_text }}</legend>
+                    {% for option in question.options.split(',') %}
+                    <label>
+                        <input type="radio" name="question{{ question.id }}" value="{{ option }}">
+                        {{ option }}
+                    </label><br>
+                    {% endfor %}
+                </fieldset>
+                {% endfor %}
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>

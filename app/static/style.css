@@ -1,0 +1,140 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header Styles */
+.main-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem 0;
+}
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header h1 {
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+.nav-links li {
+  margin-right: 1rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #ffe57f;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #4CAF50;
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.hero .btn {
+  display: inline-block;
+  background: #fff;
+  color: #4CAF50;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.hero .btn:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.hero .btn-secondary {
+  background: #ffe57f;
+  color: #333;
+}
+
+/* Section Styles */
+.section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.section h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.section p {
+  margin-bottom: 1.5rem;
+}
+.section .btn {
+  background: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.section .btn:hover {
+  background: #357a38;
+}
+
+/* Quiz List */
+.quiz-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.quiz-list li {
+  background: white;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: left;
+}
+
+/* Quiz List Link Styles */
+.quiz-list li a {
+  text-decoration: none; /* Enlève le soulignement */
+  color: #4CAF50; /* Définit la couleur des liens */
+  font-weight: bold; /* Pour un texte plus accentué */
+  transition: color 0.3s; /* Transition fluide pour la couleur */
+}
+
+.quiz-list li a:hover {
+  color: #357a38; /* Change la couleur au survol */
+  background-color: #f0f0f0; /* Ajoute une légère couleur de fond au survol */
+}
+
+.main-footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

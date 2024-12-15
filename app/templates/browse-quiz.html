@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Quizzes</title>
+  <!-- Flask utilise /static pour servir les fichiers statiques -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='browse-quiz.css') }}">
+</head>
+<body>
+  <!-- Header -->
+  <header class="main-header">
+    <div>
+      <h1>Quiz App</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/create">Create Quiz</a></li>
+          <li><a href="/browse-quizzes">Browse Quizzes</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="container">
+    <h2>Browse Quizzes</h2>
+    <p>Explore quizzes created by the community. Select one to test your knowledge!</p>
+
+    <!-- Quiz List -->
+    <section id="quiz-list">
+      <!-- Quiz cards will be dynamically loaded here -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+  </footer>
+
+  <!-- JavaScript to Fetch Quizzes -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const quizList = document.getElementById('quiz-list');
+  
+      try {
+        // Récupérer la liste des quiz depuis l'API
+        const response = await fetch('/api/quizzes');
+        const quizzes = await response.json();
+  
+        // Créer dynamiquement les cartes de quiz
+        quizzes.forEach(quiz => {
+          const card = document.createElement('div');
+          card.classList.add('quiz-card');
+          card.innerHTML = `
+            <h3>${quiz.title}</h3>
+            <p>${quiz.description}</p>
+            <a href="/quiz/${quiz.id}" class="btn btn-primary">Take Quiz</a>
+          `;
+          quizList.appendChild(card);
+        });
+      } catch (error) {
+        quizList.innerHTML = '<p>Failed to load quizzes. Please try again later.</p>';
+      }
+    });
+  </script>
+  
+</body>
+</html>

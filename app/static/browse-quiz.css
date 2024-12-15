@@ -1,0 +1,130 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header Styles */
+header {
+  background-color: #4CAF50;
+  padding: 20px;
+  color: white;
+}
+
+header nav ul {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  gap: 30px;
+}
+
+header nav ul li {
+  list-style-type: none;
+}
+
+header nav ul li a {
+  color: white;
+  font-size: 1.5rem; 
+  padding: 10px 15px; 
+  transition: background-color 0.3s;
+  text-decoration: none; 
+}
+
+header nav ul li a:hover {
+  background-color: #45a049;
+}
+
+
+/* Container top */
+.container_top {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #4CAF50;
+  padding: 2rem;
+}
+
+/* Main Section */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+/* Quiz Cards */
+#quiz-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.quiz-card {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.quiz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-card h3 {
+  color: #4CAF50;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.quiz-card .btn {
+  padding: 0.5rem 1rem;
+  color: white;
+  background: #4CAF50;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.quiz-card .btn:hover {
+  background: #357a38;
+}
+
+/* Footer */
+.main-footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

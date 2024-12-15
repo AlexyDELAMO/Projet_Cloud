@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - {{ quiz.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_results.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Quiz App</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/create">Create Quiz</a></li>
+                <li><a href="/browse-quizzes">Browse Quizzes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="quiz-header">
+            <h1>Results for "{{ quiz.title }}"</h1>
+        </section>
+
+        <section class="results">
+            {% for result in results %}
+            <fieldset class="{% if result.is_correct %}correct{% else %}incorrect{% endif %}">
+                <legend>{{ result.question_text }}</legend>
+                {% for option in result.options %}
+                    <label class="{% if option == result.correct_answer %}correct-answer{% elif option == result.user_answer and not result.is_correct %}incorrect-answer{% endif %}">
+                        {{ option }}
+                    </label><br>
+                {% endfor %}
+            </fieldset>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>

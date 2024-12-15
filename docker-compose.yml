@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - static
+      - html
+
+  static:
+    build:
+      context: ./app/static
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+
+  html:
+    build:
+      context: ./app/templates
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"

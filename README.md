@@ -1,4 +1,4 @@
-Projet flask/pyhton dockerisé
+Projet flask/python dockerisé
 
 Ce projet est un appliaction web qui permet ades utilisateur de jouer à un des nombres quiz disponible ou alors créer ses propre quiz.
 
